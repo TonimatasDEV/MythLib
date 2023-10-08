@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "mythlib",
+  "version": "${modVersion}",
+
+  "name": "MythLib",
+  "description": "Cross-Platform library.",
+  "authors": ["TonimatasDEV"],
+  "contact": {
+    "homepage": "https://github.com/TonimatasDEV/MythLib/issues"
+  },
+
+  "license": "MIT",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.tonimatas.mythlib.MythLibFabric"
+    ]
+  },
+  "mixins": [
+    "mythlib-fabric.mixins.json",
+    "mythlib-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.0.0",
+    "minecraft": "${fabricMinecraftVersionRange}"
+  }
+}

@@ -4,6 +4,7 @@ plugins {
     java
     id("architectury-plugin") version "3.4-SNAPSHOT"
     id("dev.architectury.loom") version "1.3-SNAPSHOT" apply false
+    `maven-publish`
 }
 
 val minecraftVersion: String by extra
@@ -15,6 +16,7 @@ architectury {
 
 subprojects {
     apply(plugin = "dev.architectury.loom")
+    apply(plugin = "maven-publish")
 
     base {
         archivesName.set("MythLib-" + project.name)
@@ -27,6 +29,12 @@ subprojects {
     dependencies {
         "minecraft"("com.mojang:minecraft:$minecraftVersion")
         "mappings"(project.the<LoomGradleExtensionAPI>().officialMojangMappings())
+    }
+
+    publishing {
+        publications {
+
+        }
     }
 }
 

@@ -33,7 +33,37 @@ subprojects {
 
     publishing {
         publications {
+            create<MavenPublication>("mavenJava") {
+                artifactId = "mythlib-${project.name}-$modVersion"
+                from(components["java"])
 
+                pom {
+                    name.set("MythLib ${project.name}")
+                    url.set("https://github.com/TonimatasDEV/MythLib")
+
+                    scm {
+                        connection.set("git:https://github.com/TonimatasDEV/MythLib.git")
+                        developerConnection.set("git:https://github.com/TonimatasDEV/MythLib.git")
+                        url.set("https://github.com/TonimatasDEV/MythLib")
+                    }
+
+                    licenses {
+                        license {
+                            name.set("MIT")
+                        }
+                    }
+                }
+            }
+        }
+
+        repositories {
+            maven {
+                setUrl("http://209.192.217.228:25580/")
+                credentials {
+                    username = System.getenv("USERNAME")
+                    password = System.getenv("PASSWORD")
+                }
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-package dev.tonimatas.mythlib.network.forge;
+package dev.tonimatas.mythlib.networking.forge;
 
 import dev.tonimatas.mythlib.networking.Packet;
 import dev.tonimatas.mythlib.networking.PacketHandler;

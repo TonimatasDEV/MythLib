@@ -1,4 +1,4 @@
-package dev.tonimatas.mythlib.network.fabric;
+package dev.tonimatas.mythlib.networking.fabric;
 
 import io.netty.buffer.Unpooled;
 import net.fabricmc.api.EnvType;

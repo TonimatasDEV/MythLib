@@ -7,15 +7,15 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
-val minecraftVersion: String by extra
-val forgeVersion: String by extra
-val forgeLoaderRange: String by extra
-val modVersion: String by extra
-
 architectury {
     platformSetupLoomIde()
     forge()
 }
+
+val minecraftVersion: String by extra
+val forgeVersion: String by extra
+val forgeLoaderRange: String by extra
+val modVersion: String by extra
 
 val common by configurations.creating
 val shadowCommon by configurations.creating
@@ -28,7 +28,7 @@ dependencies {
     forge("net.minecraftforge:forge:$minecraftVersion-$forgeVersion")
 
     common(project(path = ":common", configuration = "namedElements")) { isTransitive = false }
-    shadowCommon(project(path = ":common", configuration = "transformProductionFabric")) { isTransitive = false }
+    shadowCommon(project(path = ":common", configuration = "transformProductionForge")) { isTransitive = false }
 }
 
 tasks.withType<ProcessResources> {

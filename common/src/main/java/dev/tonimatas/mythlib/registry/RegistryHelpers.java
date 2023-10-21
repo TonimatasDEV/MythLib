@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 public class RegistryHelpers {
     @ExpectPlatform
     public static <E extends BlockEntity> BlockEntityType<E> createBlockEntityType(BlockEntityFactory<E> factory, Block... blocks) {
-        throw new AssertionError();
+        throw new NotImplementedException();
     }
 
     @ExpectPlatform

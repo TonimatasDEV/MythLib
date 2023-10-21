@@ -1,5 +1,9 @@
 package dev.tonimatas.mythlib.registry;
 
+import dev.architectury.injectables.annotations.ExpectPlatform;
+import net.minecraft.core.Registry;
+import org.apache.commons.lang3.NotImplementedException;
+
 import java.util.Collection;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
@@ -18,4 +22,9 @@ public interface MythRegistry<T> {
     }
 
     void init();
+
+    @ExpectPlatform
+    static <T> MythRegistry<T> create(Registry<T> registry, String id) {
+        throw new NotImplementedException();
+    }
 }

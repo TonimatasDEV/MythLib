@@ -17,13 +17,6 @@ architectury {
     forge()
 }
 
-loom {
-    forge {
-        mixinConfig("mythlib-common.mixins.json")
-        mixinConfig("mythlib-forge.mixins.json")
-    }
-}
-
 val common by configurations.creating
 val shadowCommon by configurations.creating
 

@@ -1,4 +1,4 @@
-package dev.tonimatas.mythlib.mixins;
+package dev.tonimatas.mythlib.fabric.mixins;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.entity.BlockEntity;

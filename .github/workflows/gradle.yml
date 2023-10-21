@@ -24,6 +24,11 @@ jobs:
 
       - uses: actions/upload-artifact@v3.1.2
         with:
+          name: MythLib-Common
+          path: common/build/libs/**.jar
+
+      - uses: actions/upload-artifact@v3.1.2
+        with:
           name: MythLib-Forge
           path: forge/build/libs/**.jar
 

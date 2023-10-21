@@ -8,14 +8,11 @@ modId="mythlib"
 version="${modVersion}"
 displayName="MythLib"
 #updateJSONURL="http://myurl.me/"
-#displayURL="https://example.example"
 #logoFile="icon.png"
-#credits="Thanks for this example mod goes to Java"
 authors="TonimatasDEV"
-#displayTest="MATCH_VERSION"
 
 description='''
-Cross-Platform library.
+Cross-Platform library for minecraft mod development. Based on Architectury API, ResourcefulLib and Botarium.
 '''
 
 [[dependencies.mythlib]]

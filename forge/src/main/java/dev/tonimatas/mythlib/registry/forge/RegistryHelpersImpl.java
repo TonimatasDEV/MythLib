@@ -1,4 +1,4 @@
-package dev.tonimatas.mythlib.forge;
+package dev.tonimatas.mythlib.registry.forge;
 
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;

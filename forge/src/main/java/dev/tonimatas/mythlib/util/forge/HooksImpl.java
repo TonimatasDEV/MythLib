@@ -1,4 +1,4 @@
-package dev.tonimatas.mythlib.forge;
+package dev.tonimatas.mythlib.util.forge;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;

@@ -1,4 +1,4 @@
-package dev.tonimatas.mythlib.fabric;
+package dev.tonimatas.mythlib.util.fabric;
 
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.transfer.v1.client.fluid.FluidVariantRendering;

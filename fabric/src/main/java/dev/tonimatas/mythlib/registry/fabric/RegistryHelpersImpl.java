@@ -1,4 +1,4 @@
-package dev.tonimatas.mythlib.fabric;
+package dev.tonimatas.mythlib.registry.fabric;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;

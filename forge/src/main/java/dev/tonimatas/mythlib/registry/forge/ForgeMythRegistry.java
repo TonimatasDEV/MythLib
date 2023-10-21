@@ -1,4 +1,4 @@
-package dev.tonimatas.mythlib.forge;
+package dev.tonimatas.mythlib.registry.forge;
 
 import dev.tonimatas.mythlib.registry.MythRegistry;
 import dev.tonimatas.mythlib.registry.RegistryEntries;

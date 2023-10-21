@@ -1,8 +1,8 @@
-package dev.tonimatas.mythlib.fabric;
+package dev.tonimatas.mythlib.registry.fabric;
 
+import dev.tonimatas.mythlib.registry.RegistryEntry;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
-import dev.tonimatas.mythlib.registry.RegistryEntry;
 
 import java.util.function.Supplier;
 

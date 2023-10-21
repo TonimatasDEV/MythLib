@@ -4,17 +4,17 @@ import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.material.Fluid;
-import dev.tonimatas.mythlib.fluid.util.FluidHooks;
+import dev.tonimatas.mythlib.fluid.util.FluidUtils;
 
 import java.util.function.Predicate;
 
 public interface FluidHolder {
     static FluidHolder of(Fluid fluid) {
-        return FluidHooks.newFluidHolder(fluid, FluidHooks.buckets(1D), null);
+        return FluidUtils.newFluidHolder(fluid, FluidUtils.buckets(1D), null);
     }
 
     static FluidHolder of(Fluid fluid, double buckets, CompoundTag tag) {
-        return FluidHooks.newFluidHolder(fluid, FluidHooks.buckets(buckets), tag);
+        return FluidUtils.newFluidHolder(fluid, FluidUtils.buckets(buckets), tag);
     }
 
     Fluid getFluid();

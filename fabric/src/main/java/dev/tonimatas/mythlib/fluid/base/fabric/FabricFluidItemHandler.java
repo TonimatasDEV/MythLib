@@ -9,7 +9,7 @@ import net.fabricmc.fabric.api.transfer.v1.storage.StorageView;
 import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.minecraft.world.item.ItemStack;
 import dev.tonimatas.mythlib.fluid.base.FluidHolder;
-import dev.tonimatas.mythlib.fluid.util.FluidHooks;
+import dev.tonimatas.mythlib.fluid.util.FluidUtils;
 import dev.tonimatas.mythlib.item.ItemStackHolder;
 import dev.tonimatas.mythlib.item.ItemStackStorage;
 
@@ -49,7 +49,7 @@ public record FabricFluidItemHandler(ItemStack stack, ContainerItemContext conte
                 transaction.commit();
                 item.setStack(context.getItemVariant().toStack());
             }
-            return extracted == 0 ? FluidHooks.emptyFluid() : FabricFluidHolder.of(fabricFluidHolder.toVariant(), extracted);
+            return extracted == 0 ? FluidUtils.emptyFluid() : FabricFluidHolder.of(fabricFluidHolder.toVariant(), extracted);
         }
     }
 

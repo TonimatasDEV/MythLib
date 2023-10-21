@@ -4,7 +4,7 @@ import com.google.gson.JsonArray;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.crafting.Ingredient;
 
-public class RecipesUtil {
+public class RecipeUtils {
     public static NonNullList<Ingredient> deserializeIngredients(JsonArray json) {
         NonNullList<Ingredient> ingredients = NonNullList.create();
 

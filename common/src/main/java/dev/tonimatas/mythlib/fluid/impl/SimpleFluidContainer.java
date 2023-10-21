@@ -10,7 +10,7 @@ import net.minecraft.world.level.material.Fluids;
 import dev.tonimatas.mythlib.fluid.base.FluidContainer;
 import dev.tonimatas.mythlib.fluid.base.FluidHolder;
 import dev.tonimatas.mythlib.fluid.base.FluidSnapshot;
-import dev.tonimatas.mythlib.fluid.util.FluidHooks;
+import dev.tonimatas.mythlib.fluid.util.FluidUtils;
 
 import java.util.List;
 import java.util.Objects;
@@ -27,7 +27,7 @@ public class SimpleFluidContainer implements FluidContainer {
     public SimpleFluidContainer(IntToLongFunction maxAmount, int tanks, BiPredicate<Integer, FluidHolder> fluidFilter) {
         this.maxAmount = maxAmount;
         this.fluidFilter = fluidFilter;
-        this.storedFluid = NonNullList.withSize(tanks, FluidHooks.emptyFluid());
+        this.storedFluid = NonNullList.withSize(tanks, FluidUtils.emptyFluid());
     }
 
     public SimpleFluidContainer(long maxAmount, int tanks, BiPredicate<Integer, FluidHolder> fluidFilter) {
@@ -63,18 +63,18 @@ public class SimpleFluidContainer implements FluidContainer {
             if (fluidFilter.test(i, fluid)) {
                 FluidHolder toExtract = fluid.copyHolder();
                 if (storedFluid.isEmpty()) {
-                    return FluidHooks.emptyFluid();
+                    return FluidUtils.emptyFluid();
                 } else if (storedFluid.get(i).matches(fluid)) {
                     long extractedAmount = (long) Mth.clamp(fluid.getFluidAmount(), 0, storedFluid.get(i).getFluidAmount());
                     toExtract.setAmount(extractedAmount);
                     if (simulate) return toExtract;
                     this.storedFluid.get(i).setAmount(storedFluid.get(i).getFluidAmount() - extractedAmount);
-                    if (storedFluid.get(i).getFluidAmount() == 0) storedFluid.set(i, FluidHooks.emptyFluid());
+                    if (storedFluid.get(i).getFluidAmount() == 0) storedFluid.set(i, FluidUtils.emptyFluid());
                     return toExtract;
                 }
             }
         }
-        return FluidHooks.emptyFluid();
+        return FluidUtils.emptyFluid();
     }
 
     @Override
@@ -130,7 +130,7 @@ public class SimpleFluidContainer implements FluidContainer {
 
     @Override
     public void fromContainer(FluidContainer container) {
-        this.storedFluid = NonNullList.withSize(container.getSize(), FluidHooks.emptyFluid());
+        this.storedFluid = NonNullList.withSize(container.getSize(), FluidUtils.emptyFluid());
         for (int i = 0; i < container.getSize(); i++) {
             this.storedFluid.set(i, container.getFluids().get(i).copyHolder());
         }
@@ -142,7 +142,7 @@ public class SimpleFluidContainer implements FluidContainer {
         ListTag fluids = tag.getList(FLUID_KEY, Tag.TAG_COMPOUND);
         for (int i = 0; i < fluids.size(); i++) {
             CompoundTag fluid = fluids.getCompound(i);
-            this.storedFluid.set(i, FluidHooks.fluidFromCompound(fluid));
+            this.storedFluid.set(i, FluidUtils.fluidFromCompound(fluid));
         }
     }
 

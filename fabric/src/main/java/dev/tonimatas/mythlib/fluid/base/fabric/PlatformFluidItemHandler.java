@@ -5,7 +5,7 @@ import dev.tonimatas.mythlib.fluid.base.FluidHolder;
 import dev.tonimatas.mythlib.fluid.base.FluidSnapshot;
 import dev.tonimatas.mythlib.fluid.base.ItemFluidContainer;
 import dev.tonimatas.mythlib.fluid.impl.SimpleFluidSnapshot;
-import dev.tonimatas.mythlib.fluid.util.FluidHooks;
+import dev.tonimatas.mythlib.fluid.util.FluidUtils;
 import dev.tonimatas.mythlib.item.ItemStackHolder;
 import dev.tonimatas.mythlib.item.ItemStackStorage;
 import net.fabricmc.fabric.api.transfer.v1.context.ContainerItemContext;
@@ -52,7 +52,7 @@ public record PlatformFluidItemHandler(ItemStackHolder stack, ContainerItemConte
                 transaction.commit();
                 stack.setStack(context.getItemVariant().toStack());
             }
-            return extracted == 0 ? FluidHooks.emptyFluid() : FabricFluidHolder.of(fabricFluidHolder.toVariant(), extracted);
+            return extracted == 0 ? FluidUtils.emptyFluid() : FabricFluidHolder.of(fabricFluidHolder.toVariant(), extracted);
         }
     }
 

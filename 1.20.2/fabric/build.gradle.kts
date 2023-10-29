@@ -1,6 +1,10 @@
+@file:Suppress("DEPRECATION")
+
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 import net.fabricmc.loom.task.RemapJarTask
 import org.gradle.api.component.AdhocComponentWithVariants
+import java.io.File
+import java.util.Properties
 
 plugins {
     id("com.github.johnrengelman.shadow") version "7.1.2"
@@ -11,10 +15,11 @@ architectury {
     fabric()
 }
 
-val minecraftVersion: String by extra
-val fabricApiVersion: String by extra
+val minecraftVersion = "1.20.2"
+val properties = File("$minecraftVersion/gradle.properties").takeIf { it.exists() }?.inputStream()?.use { Properties().apply { load(it) } }
+val fabricApiVersion = properties?.getProperty("fabricApiVersion")
 val fabricLoaderVersion: String by extra
-val modVersion: String by extra
+val modVersion = properties?.getProperty("modVersion")
 
 val common by configurations.creating
 val shadowCommon by configurations.creating
@@ -33,8 +38,8 @@ dependencies {
         exclude(group = "net.fabricmc", module = "fabric-api")
     })
 
-    common(project(path = ":common", configuration = "namedElements")) { isTransitive = false }
-    shadowCommon(project(path = ":common", configuration = "transformProductionFabric")) { isTransitive = false }
+    common(project(path = ":$minecraftVersion:common", configuration = "namedElements")) { isTransitive = false }
+    shadowCommon(project(path = ":$minecraftVersion:common", configuration = "transformProductionFabric")) { isTransitive = false }
 }
 
 tasks.withType<ProcessResources> {
@@ -64,7 +69,7 @@ tasks.jar {
 }
 
 tasks.sourcesJar {
-    val commonSources = project(":common").tasks.sourcesJar.get()
+    val commonSources = project(":$minecraftVersion:common").tasks.sourcesJar.get()
     dependsOn(commonSources)
     from(commonSources.archiveFile.map { zipTree(it) })
 }

@@ -1,6 +1,13 @@
 # Project exclude paths
+/.gradle/
 /.idea/
-build/
-.gradle/
-run/
+/build/
+/common/.gradle/
+/common/build/
+/fabric/.gradle/
+/fabric/build/
+/fabric/run/
+/forge/.gradle/
+/forge/build/
+/forge/run/
 /.architectury-transformer/

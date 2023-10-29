@@ -7,9 +7,5 @@ pluginManagement {
     }
 }
 
-//include("common")
-include("1.20.1:")
-include("1.20.1:common:", "1.20.1:fabric:", "1.20.1:forge:")
-include("1.20.2:")
-include("1.20.2:common:", "1.20.2:fabric:", "1.20.2:forge:")
+include("common", "fabric", "forge")
 rootProject.name = "MythLib"

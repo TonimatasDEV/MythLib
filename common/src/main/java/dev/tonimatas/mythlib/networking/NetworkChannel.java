@@ -16,7 +16,7 @@ public class NetworkChannel {
     public NetworkChannel(String modId, String channel) {
         this.resourceLocation = new ResourceLocation(modId, channel);
 
-        PacketChannelHelper.registerChannel(this.resourceLocation, 0, () -> false);
+        PacketChannelHelper.registerChannel(this.resourceLocation, 0);
     }
 
     public final <T extends Packet<T>> void registerPacket(NetworkDirection direction, ResourceLocation id,PacketHandler<T> handler, Class<T> packetClass) {

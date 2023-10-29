@@ -9,7 +9,7 @@ import java.util.function.BooleanSupplier;
 
 public class PacketChannelHelper {
     @ExpectPlatform
-    public static void registerChannel(ResourceLocation channel, int protocolVersion, BooleanSupplier optional) {
+    public static void registerChannel(ResourceLocation channel, int protocolVersion) {
         throw new NotImplementedException();
     }
 

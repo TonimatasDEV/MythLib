@@ -14,7 +14,7 @@ import dev.tonimatas.mythlib.networking.PacketHandler;
 import java.util.function.BooleanSupplier;
 
 public class PacketChannelHelperImpl {
-    public static void registerChannel(ResourceLocation channel, int protocolVersion, BooleanSupplier optional) {
+    public static void registerChannel(ResourceLocation channel, int protocolVersion) {
     }
 
     public static <T extends Packet<T>> void registerS2CPacket(ResourceLocation channel, ResourceLocation id, PacketHandler<T> handler, Class<T> packetClass) {

@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="${forgeLoaderRange}"
+license="MIT"
+issueTrackerURL="https://github.com/TonimatasDEV/MythLib/issues"
+
+[[mods]]
+modId="mythlib"
+version="${modVersion}"
+displayName="MythLib"
+#updateJSONURL="http://myurl.me/"
+#logoFile="icon.png"
+authors="TonimatasDEV"
+
+description='''
+Cross-Platform library for minecraft mod development. Based on Architectury API, ResourcefulLib and Botarium.
+'''
+
+[[dependencies.mythlib]]
+   modId="forge"
+   mandatory=true
+   versionRange="${forgeLoaderRange}"
+   ordering="NONE"
+   side="BOTH"
+
+[[dependencies.mythlib]]
+   modId="minecraft"
+   mandatory=true
+   versionRange="${forgeMinecraftVersionRange}"
+   ordering="NONE"
+   side="BOTH"

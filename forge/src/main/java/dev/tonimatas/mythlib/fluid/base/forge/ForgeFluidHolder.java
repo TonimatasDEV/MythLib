@@ -1,11 +1,11 @@
 package dev.tonimatas.mythlib.fluid.base.forge;
 
+import dev.tonimatas.mythlib.fluid.base.FluidHolder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.fluids.FluidStack;
-import dev.tonimatas.mythlib.fluid.base.FluidHolder;
 
 import java.util.Objects;
 
